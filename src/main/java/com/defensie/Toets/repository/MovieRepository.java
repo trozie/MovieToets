@@ -1,4 +1,7 @@
 package com.defensie.Toets.repository;
 
-public class MovieRepository {
+import com.defensie.Toets.model.Movie;
+import org.springframework.data.repository.CrudRepository;
+
+public interface MovieRepository extends CrudRepository<Movie, Integer> {
 }
