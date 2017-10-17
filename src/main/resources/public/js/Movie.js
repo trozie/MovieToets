@@ -10,7 +10,7 @@ function initializeTable() {
                 movie[i].movieSeen,
                 "<a class=\"btn btn-info\" id=\"markButton\">Markeer als gezien</a>",
                 "<a class=\"btn btn-danger\" id=\"deleteButton\">Delete</a>"
-            ]);
+            ]).draw(false);
         }
     });
 }
@@ -58,4 +58,7 @@ function deleteMovie(row) {
 initializeTable();
     $("#submit").click(function(){
         addMovie();
+    });
+    $("#deleteButton").click(function(){
+            deleteMovie();
     });
