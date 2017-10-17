@@ -60,5 +60,10 @@ initializeTable();
         addMovie();
     });
     $("#deleteButton").click(function(){
+
             deleteMovie();
+
     });
+    $("#markButton").click(function(){
+                deleteMovie();
+        });
