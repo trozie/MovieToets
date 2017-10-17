@@ -1,22 +1,16 @@
 var table = $('#table_id').DataTable();
 
-$(document).ready( function () {
-    initializeTable();
-    $("#submit").click(function(){
-        addMovie();
-    });
-});
-
 function initializeTable() {
     $.get("/api/getMovieList", function (movie) {
+        console.log(movie);
         var tableData = [];
         for (var i = 0; i < movie.length; i++) {
-            tableData.push({
-            0:  movie[i].movieName,
-            1:  movie[i].movieSeen,
-            2:  "<a class=\"btn btn-info\" id=\"markButton\">Markeer als gezien</a>",
-            3:  "<a class=\"btn btn-danger\" id=\"deleteButton\">Delete</a>"
-            })
+            table.row.add([
+                movie[i].movieName,
+                movie[i].movieSeen,
+                "<a class=\"btn btn-info\" id=\"markButton\">Markeer als gezien</a>",
+                "<a class=\"btn btn-danger\" id=\"deleteButton\">Delete</a>"
+            ]);
         }
     });
 }
@@ -40,7 +34,7 @@ function addMovie() {
                 table.row.add([
                     movie.movieName,
                     movie.movieSeen,
-                    "<a class=\"btn btn-primary\" id=\"markButton\">Markeer als gezien</a>",
+                    "<a class=\"btn btn-info\" id=\"markButton\">Markeer als gezien</a>",
                     "<a class=\"btn btn-danger\" id=\"deleteButton\">Delete</a>"
                 ]).draw(false);
 
@@ -60,3 +54,8 @@ function deleteMovie(row) {
         })
     }
 }
+
+initializeTable();
+    $("#submit").click(function(){
+        addMovie();
+    });

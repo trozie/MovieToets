@@ -17,9 +17,7 @@ public class MovieController {
 
     @RequestMapping(value = "/getMovieList", method = RequestMethod.GET)
     public Iterable<Movie> getAllMovies() {
-        List<Movie> list = new ArrayList<>();
-        movieRepository.findAll().forEach(list::add);
-        return list;
+        return movieRepository.findAll();
     }
 
     @RequestMapping(value = "/addMovie", method = RequestMethod.POST)
