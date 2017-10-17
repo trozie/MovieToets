@@ -8,6 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class Movie {
 
+
+    // genereert automatisch een id, en verwacht twee dingen zoals een naam en of je de film gezien hebt.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
