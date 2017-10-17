@@ -14,7 +14,7 @@ function initializeTable() {
             tableData.push({
             0:  movie[i].movieName,
             1:  movie[i].movieSeen,
-            2:  "<a class=\"btn btn-primary\" id=\"markButton\">Markeer als gezien</a>",
+            2:  "<a class=\"btn btn-info\" id=\"markButton\">Markeer als gezien</a>",
             3:  "<a class=\"btn btn-danger\" id=\"deleteButton\">Delete</a>"
             })
         }
