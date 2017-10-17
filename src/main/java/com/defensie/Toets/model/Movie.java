@@ -12,6 +12,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String movieName;
+    private boolean movieSeen;
 
 
     // empty constructor
@@ -19,6 +20,7 @@ public class Movie {
 
 
     // getters and setters
+
     public int getId() {
         return id;
     }
@@ -33,5 +35,13 @@ public class Movie {
 
     public void setMovieName(String movieName) {
         this.movieName = movieName;
+    }
+
+    public boolean isMovieSeen() {
+        return movieSeen;
+    }
+
+    public void setMovieSeen(boolean movieSeen) {
+        this.movieSeen = movieSeen;
     }
 }
